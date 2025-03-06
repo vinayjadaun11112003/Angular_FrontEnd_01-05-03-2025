@@ -9,4 +9,5 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class AppComponent {
   title:string = 'Hello App';
   hello:String = 'Hello from BrideLabzz';
+  ImageURL:String = 'https://iili.io/3F8DupV.jpg';
 }
