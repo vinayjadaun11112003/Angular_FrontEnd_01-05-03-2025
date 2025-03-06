@@ -2,8 +2,10 @@
     <div> <h2>{{hello}}</h2>
        <img [src]="ImageURL" (click)="onImageClick($event)" alt="3F8DupV.jpg" />
         <h2>Hello {{this.userName}} from Bridgelabzz...</h2>
+       
         <div>
-            <input placeholder="Enter Your Name" [(ngModel)]="userName"/>
+            <input (input)="onInput($event)" placeholder="Enter Your Name" [(ngModel)]="userName"/>
+            <span class="err">{{this.errorMsg}}</span>
         </div>
        
     </div>

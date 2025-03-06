@@ -13,6 +13,7 @@ export class AppComponent {
   ImageURL:string = 'https://iili.io/3F8DupV.jpg';
   redirectt:string = 'https://vinayjadaun-com.vercel.app/';
   userName:string = '';
+  errorMsg:string = '';
 
 
   // This method is called when the image is clicked
@@ -20,11 +21,17 @@ export class AppComponent {
     console.log("helloworld");
     window.open(this.redirectt,"_blank"); // Navigate to the new URL
   }
-  
+    
 
-  onInput(event:Event){
-     
-  }
+  onInput(event:Event) {
+    console.log("Change Event Occurred!", event.target);
+    const nameRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{2,}$');
+    if (nameRegex.test(this.userName)) {
+        this.errorMsg = "";
+        return;
+    }
+    this.errorMsg = "Name is Incorrect!";
+}
 
   
 }
